@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1f1f;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover {
+  color: #00adb5;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: white;
+}
+
+.content-container {
+  height: 100%;
+}
+
+.content {
+  background-color: #000000;
+  flex: 1;
+  padding: 36px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
-import "./index.css";
+import "./styles/global.scss";
 
 function App() {
     const [activePage, setActivePage] = useState("about");
