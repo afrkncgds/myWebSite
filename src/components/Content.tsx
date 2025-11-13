@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import "./Content.scss";
+import Skills from "../pages/Skills.tsx";
 interface ContentProps {
     activePage: string;
 }
@@ -56,8 +57,12 @@ const Content: React.FC<ContentProps> = ({ activePage }) => {
 
                         {activePage === "projects" && (
                             <>
-                                <h2>Projeler</h2>
-                                <p>Burada projelerim listelenecek.</p>
+                                <p>projeler</p>
+                            </>
+                        )}
+                        {activePage === "skills" && (
+                            <>
+                                <Skills/>
                             </>
                         )}
 

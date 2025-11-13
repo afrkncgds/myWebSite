@@ -50,22 +50,24 @@
 
 .sidebar li {
   padding: 0.7rem 1rem;
-  border-radius: 6px;
   width: 100%;
   cursor: pointer;
   transition: 0.2s;
+
   border-bottom: 1px solid #333333;
 }
 
 .sidebar li:hover {
   background: #333333;
-    color: white;
+    color: #ff714a;
+  border-right: 1px solid #ff714a;
 
 }
 
 .sidebar li.active {
   background:#333333;
-  color: white;
+  color: #ff714a;
+  border-right: 1px solid #ff714a;
 }
 .sidebar-bottom {
   border-top: 1px solid #eee;

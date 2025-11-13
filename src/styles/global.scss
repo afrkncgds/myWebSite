@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: $primary-bg;
+  background-color: $black;
   color: $text-color;
   font-family: "Inter", sans-serif;
 }
@@ -29,7 +29,7 @@ button {
 .app-container {
   display: flex;
   height: 100vh;
-  background: white;
+  background-color: $black;
 }
 
 
@@ -37,7 +37,7 @@ button {
   height: 100%;
 }
 .content {
-  background-color: $black;
+  background-color:#1f1f1f;
   flex: 1;
   padding: 36px;
   height: 100%;

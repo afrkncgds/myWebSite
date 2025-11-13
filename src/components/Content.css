@@ -1,7 +1,16 @@
+.about-root {
+  background: #1f1f1f;
+}
 .about-root .about-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+.about-root .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 70px 10%;
 }
 
 /*# sourceMappingURL=Content.css.map */
