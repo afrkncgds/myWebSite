@@ -1,0 +1,191 @@
+.project-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 113, 74, 0.2);
+  border-color: #ff714a;
+}
+.project-card:hover .project-image-wrapper .project-image-overlay {
+  opacity: 1;
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.project-image-wrapper .project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.project-image-wrapper .project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-image-wrapper .project-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #ff714a;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.project-image-wrapper .project-image-link:hover {
+  background: #fff;
+  color: #ff714a;
+  transform: scale(1.1);
+}
+.project-image-wrapper .project-image-link svg {
+  width: 24px;
+  height: 24px;
+}
+.project-image-wrapper:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-header {
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.project-body {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  color: #a5a5a5;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #333333;
+  color: #ff714a;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #ff714a;
+}
+
+.project-footer {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #333333;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid #555;
+}
+.project-link:hover {
+  background: #ff714a;
+  border-color: #ff714a;
+  color: #fff;
+}
+.project-link.github:hover {
+  background: #333;
+  border-color: #555;
+}
+.project-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 1024px) {
+  .project-image-wrapper {
+    height: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .project-image-wrapper {
+    height: 200px;
+  }
+  .project-content {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 1.3rem;
+  }
+  .project-description {
+    font-size: 0.9rem;
+  }
+  .project-footer {
+    flex-direction: column;
+  }
+  .project-footer .project-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .project-image-wrapper {
+    height: 180px;
+  }
+  .project-content {
+    padding: 16px;
+  }
+  .project-title {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=ProjectCard.css.map */
