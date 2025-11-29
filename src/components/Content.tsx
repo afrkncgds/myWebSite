@@ -10,17 +10,18 @@ interface ContentProps {
     onChangePage: (page: PageId) => void;
 }
 
-const Content: React.FC<ContentProps> = memo(({ activePage }) => {
-
-
-
+// 1. DÜZELTME: onChangePage'i burada süslü parantez içine ekleyin
+const Content: React.FC<ContentProps> = memo(({ activePage, onChangePage }) => {
 
     const pageContentMap: Record<PageId, React.ReactNode> = useMemo(() => ({
-        about: <About />,
+        // 2. DÜZELTME: Artık dummy fonksiyon yerine gerçek prop'u geçiyoruz
+        about: <About onChangePage={onChangePage} />,
         projects: <Projects />,
         skills: <Skills />,
         contact: <Contact />,
-    }), []);
+
+        // 3. DÜZELTME: useMemo'nun bu fonksiyonu tanıması için dependency array'e ekleyin
+    }), [onChangePage]);
 
     return (
         <div className="content-wrapper" style={{ flex: 1, overflow: "hidden" }}>
@@ -36,7 +37,6 @@ const Content: React.FC<ContentProps> = memo(({ activePage }) => {
                     style={{ willChange: "transform, opacity" }}
                 >
                     <div className="content">
-                        {/* activePage'e karşılık gelen içeriği dinamik olarak render et */}
                         {pageContentMap[activePage] || (
                             <motion.h2 variants={PAGE_VARIANTS}>Sayfa Bulunamadı</motion.h2>
                         )}

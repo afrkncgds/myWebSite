@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from "react";
 import TitleSlider from "../../components/layout/TitleSlider";
-import { PageId } from "../../types";
+import type {PageId} from "../../types";
 import "./About.scss";
 
 interface AboutProps {
@@ -18,7 +18,7 @@ const About: React.FC<AboutProps> = memo(({ onChangePage }) => {
             <div className="about-wrapper">
                 <div className="image-container">
                     <img 
-                        src="/img/cv-foto.png" 
+                        src="public/img/cv-foto.png"
                         alt="Ayhan Furkan Çağdaş" 
                         loading="lazy"
                     />

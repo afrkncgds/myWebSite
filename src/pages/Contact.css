@@ -118,15 +118,6 @@
   margin-bottom: 20px;
 }
 
-.about-page-root {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  padding: 40px 0;
-  color: #fff;
-}
-
 @media (max-width: 968px) {
   .about-page-root {
     flex-direction: column;

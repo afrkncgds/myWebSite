@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { APP_CONFIG } from "../../config/app.config";
 import "./Contact.scss";
+import "Contact.css"
 
 const Contact: React.FC = memo(() => {
     const contactCards = [
