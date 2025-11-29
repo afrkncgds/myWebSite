@@ -1,0 +1,53 @@
+.projects {
+  .title-item {
+    padding: 24px 0;
+    margin: 24px 0;
+    border-bottom: 1px solid #d5d5d5;
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  // Mobil
+  @media (max-width: 768px) {
+    .title-item {
+      padding: 16px 0;
+      margin: 16px 0;
+      
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+}
+
+// Mobil
+@media (max-width: 768px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}

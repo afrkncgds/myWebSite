@@ -1,7 +1,7 @@
 // src/components/layout/TitleSlider.tsx
 
 import React, { useState, useEffect } from 'react';
-import {type JobTitle, TITLES} from '../../data/titles.ts';
+import { type JobTitle, TITLES } from "../../data";
 
 
 const TitleSlider: React.FC = () => {

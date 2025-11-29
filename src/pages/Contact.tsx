@@ -71,7 +71,7 @@ const ContactPage: React.FC = () => {
                         </svg>
                     </div>
                     <div className="card-value text-xl font-semibold mt-2">
-                        <a href="05419189671">05419189671</a>
+                        <a href="tel:+905419189671">+90 541 918 96 71</a>
                     </div>
 
                 </motion.div>
@@ -90,7 +90,7 @@ const ContactPage: React.FC = () => {
                         </svg>
                     </div>
                     <div className="card-value text-xl font-semibold mt-2">
-                        <a href="frkncagdas@gmail.com">frkncagdas@gmail.com</a>
+                        <a href="mailto:frkncagdas@gmail.com">frkncagdas@gmail.com</a>
                     </div>
 
                 </motion.div>

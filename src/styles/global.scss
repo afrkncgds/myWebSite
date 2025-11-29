@@ -32,15 +32,56 @@ button {
   background-color: $black;
 }
 
+// Mobil - dikey layout
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+}
 
 .content-container {
   height: 100%;
+  width: 100%;
 }
+
 .content {
-  background-color:#1f1f1f;
+  background-color: #1f1f1f;
   flex: 1;
   padding: 36px;
   height: 100%;
   overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .content {
+    padding: 30px 24px;
+  }
+}
+
+// Mobil - content padding azalt
+@media (max-width: 768px) {
+  .content {
+    padding: 20px 16px;
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding: 0;
+  }
+}
+
+// Küçük mobil
+@media (max-width: 480px) {
+  .content {
+    padding: 16px 12px;
+  }
 }

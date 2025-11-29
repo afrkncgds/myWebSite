@@ -1,3 +1,30 @@
+.skills {
+  .title-item {
+    padding: 24px 0;
+    margin: 24px 0;
+    border-bottom: 1px solid #d5d5d5;
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+  }
+
+  // Mobil
+  @media (max-width: 768px) {
+    .title-item {
+      padding: 16px 0;
+      margin: 16px 0;
+      
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +47,6 @@
   &:nth-child(3) { animation-delay: 0.3s; }
   &:nth-child(4) { animation-delay: 0.4s; }
   &:nth-child(5) { animation-delay: 0.5s; }
-  // İstediğin kadar devam ettirebilirsin
 }
 
 .skill-bar-header {
@@ -43,6 +69,7 @@
   width: 0;
   animation: fillBar 1.2s ease-out forwards;
 }
+
 .skills-experience-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -91,11 +118,6 @@
   color: #aaa;
 }
 
-/* Skills */
-
-
-
-
 .skills-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -104,11 +126,13 @@
   border-bottom: 2px solid #ff714a;
   display: inline-block;
 }
-.skills-columns{
+
+.skills-columns {
   flex: 1;
   min-width: 300px;
   max-width: 600px;
 }
+
 .skill-bar {
   margin-bottom: 1.2rem;
 }
@@ -132,17 +156,18 @@
   background-color: #ff714a;
   height: 100%;
   width: 0;
-
 }
-
-
-/* Animasyonlar */
-
 
 @keyframes fadeInUp {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fillBar {
+  to {
+    width: var(--width);
   }
 }
 

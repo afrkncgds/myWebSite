@@ -1,71 +1,267 @@
-/* src/styles/pages/_contactPage.scss */
+// Contact.scss
 
-// Harita kapsayıcısı
-.map-container {
-  // Harita görseli/embed'i için bir çerçeve stili verebiliriz
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* --- Ana Yerleşim (Yeni Eklenen Kısım) --- */
 
-  img {
-    display: block; // img etiketinin altındaki boşluğu kaldırır
+.contact-page-root {
+  width: 100%;
+  // Masaüstünde yan yana dizilim için Flexbox kullanıyoruz
+  display: flex;
+  align-items: flex-start; // İçerikleri üstten hizala
+  gap: 40px; // Sol ve sağ blok arasındaki boşluk
+  padding: 20px 0; // Üstten alttan biraz boşluk
+
+  // Sol Kolon (Harita/Görsel Alanı)
+  .contact-left-column {
+    flex: 1; // Toplam alanın 1 birimini kapla (örn: %40)
+    min-width: 300px; // Çok küçülmesini engelle
+    position: sticky; // (Opsiyonel) Sağ taraf kayarken harita sabit kalsın
+    top: 20px;
+  }
+
+  // Sağ Kolon (Yazılar ve Kartlar Alanı)
+  .contact-right-column {
+    flex: 1.5; // Toplam alanın 1.5 birimini kapla (daha geniş - örn: %60)
+    display: flex;
+    flex-direction: column;
+    gap: 30px; // Kartlar ve form arasındaki boşluk
   }
 }
 
-// Kartlar kapsayıcısı
-.contact-cards-container {
-  margin: 30px 0 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* --- Mevcut Stiller (Düzenlenmiş) --- */
+
+// Harita kapsayıcısı (Artık margin-bottom'a gerek yok, parent gap hallediyor)
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  // margin-bottom: 2rem; // KALDIRILDI
+  border: 1px solid #333333;
+  height: 100%; // Bulunduğu kolonu doldursun
+  min-height: 400px; // Masaüstünde iyi görünmesi için minimum yükseklik
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%; // Kapsayıcıyı doldur
+    border: none;
+    min-height: 400px; // iframe'in çökmemesi için
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Görüntüyü bozmadan alanı doldur
+  }
 }
 
-// Tek bir kartın stili
+// Kartlar kapsayıcısı (Margin-top kaldırıldı)
+.contact-cards-container {
+  // margin: 30px 0 0; // KALDIRILDI
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 sütunlu grid
+  gap: 20px;
+}
+
+// Tek bir kartın stili (Aynen korundu)
 .contact-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #333333; // Görseldeki koyu gri arka plan
-  color: #ffffff; // Beyaz yazı rengi
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  min-height: 150px; // Dikey hizalamayı korumak için sabit yükseklik
-  svg{
-    path{
-      color: #d5d5d5;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  min-height: 180px;
+  transition: all 0.3s ease;
+  border: 1px solid #333333;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 113, 74, 0.2);
+    border-color: #ff714a;
+  }
+
+  svg {
+    path {
+      fill: #ff714a;
     }
   }
-  .card-value{
-    a , span{
-      color: #d5d5d5;
-      text-decoration: none;
-    }
-  }
+
   .icon-wrapper {
-    color: #ffffff; // İkon rengi
-    // İkon çevresindeki dairesel veya kutu stili buraya eklenebilir
+    color: #ff714a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 113, 74, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .icon-wrapper {
+    background: rgba(255, 113, 74, 0.2);
+    transform: scale(1.1);
   }
 
   .card-value {
     font-weight: 600;
-    margin-top: 5px;
-    font-size: 1.1em;
+    margin-top: 8px;
+    font-size: 1rem;
+    text-align: center;
+
+    a, span {
+      color: #d5d5d5;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff714a;
+    }
   }
 
   .card-label {
-    color: #aaaaaa; // Daha açık gri etiket rengi
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    margin-top: 4px;
   }
 }
 
-// Mobil Cihazlar İçin Ayarlama
+.contact-form-section {
+  // margin-top: 3rem; // KALDIRILDI, parent gap hallediyor
+  // Form alanı için geçici stil
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #333333;
+
+  h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}
+// About.scss
+
+.about-page-root {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 40px 0;
+  color: #fff;
+
+
+}
+
+// --- Responsive (Mobil/Tablet) ---
+
+@media (max-width: 968px) {
+  .about-page-root {
+    flex-direction: column;
+    gap: 30px;
+
+    .about-left-column {
+      width: 100%;
+      max-width: 100%;
+      flex-direction: row; // Mobilde fotoğraf ve isim yan yana
+      justify-content: flex-start;
+      text-align: left;
+      gap: 20px;
+      position: static; // Sticky özelliğini kaldır
+
+      .profile-image-container {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .left-content {
+        align-items: flex-start; // Sola hizala
+      }
+    }
+
+    .about-right-column {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .about-left-column {
+    flex-direction: column; // Küçük mobilde tekrar alt alta
+    text-align: center;
+
+    .left-content {
+      align-items: center; // Ortala
+    }
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr !important; // Kartlar tek sütun
+  }
+}
+/* --- Medya Sorguları (Responsiveness) --- */
+
+// Tablet ve Altı (Kırılma Noktası: 1024px)
 @media (max-width: 1024px) {
+  // ANA DEĞİŞİKLİK: Düzeni dikey hale getir
+  .contact-page-root {
+    flex-direction: column; // Alt alta sırala
+    gap: 30px;
+  }
+
+  .contact-left-column,
+  .contact-right-column {
+    width: 100%; // Mobilde tam genişlik
+    flex: auto;
+  }
+
+  // Harita mobilde çok yüksek olmasın
+  .map-container iframe {
+    min-height: 300px;
+  }
+
+  // Kartları 3'ten 2 sütuna düşür
   .contact-cards-container {
-    grid-template-columns: repeat(2, 1fr); // Tablete 2 sütun
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
-@media (max-width: 640px) {
+// Mobil (Kırılma Noktası: 768px)
+@media (max-width: 768px) {
   .contact-cards-container {
-    grid-template-columns: 1fr; // Mobil cihazlara 1 sütun
+    grid-template-columns: 1fr; // Tek sütuna düşür
+  }
+
+  .contact-card {
+    min-height: 160px;
+    padding: 20px;
+    flex-direction: row; // Mobilde ikon solda, yazı sağda daha iyi durabilir (opsiyonel)
+    justify-content: flex-start;
+    text-align: left;
+    gap: 20px;
+
+    .icon-wrapper {
+      margin-bottom: 0;
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0; // İkonun küçülmesini engelle
+    }
+
+    // Mobilde metinleri sola hizala
+    .card-value, .card-label {
+      text-align: left;
+      margin-top: 0;
+    }
+    .card-value {
+      margin-bottom: 4px;
+    }
   }
 }

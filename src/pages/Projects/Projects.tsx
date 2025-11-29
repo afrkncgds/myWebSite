@@ -1,7 +1,7 @@
 import React, { memo } from "react";
-import { PROJECTS } from "../data/projects.data";
-import ProjectCard from "../components/projects/ProjectCard";
-import MotionWrapper from "../components/common/MotionWrapper";
+import { PROJECTS } from "../../data";
+import ProjectCard from "../../components/projects/ProjectCard";
+import MotionWrapper from "../../components/common/MotionWrapper";
 import "./Projects.scss";
 
 const Projects: React.FC = memo(() => {
