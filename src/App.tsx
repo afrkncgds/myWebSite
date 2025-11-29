@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="app-container">
             <Sidebar activePage={activePage} onChangePage={setActivePage} />
-            <Content activePage={activePage} />
+            <Content activePage={activePage} onChangePage={setActivePage} />
         </div>
     );
 }

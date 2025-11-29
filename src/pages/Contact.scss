@@ -1,0 +1,71 @@
+/* src/styles/pages/_contactPage.scss */
+
+// Harita kapsayıcısı
+.map-container {
+  // Harita görseli/embed'i için bir çerçeve stili verebiliriz
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    display: block; // img etiketinin altındaki boşluğu kaldırır
+  }
+}
+
+// Kartlar kapsayıcısı
+.contact-cards-container {
+  margin: 30px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+// Tek bir kartın stili
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333; // Görseldeki koyu gri arka plan
+  color: #ffffff; // Beyaz yazı rengi
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  min-height: 150px; // Dikey hizalamayı korumak için sabit yükseklik
+  svg{
+    path{
+      color: #d5d5d5;
+    }
+  }
+  .card-value{
+    a , span{
+      color: #d5d5d5;
+      text-decoration: none;
+    }
+  }
+  .icon-wrapper {
+    color: #ffffff; // İkon rengi
+    // İkon çevresindeki dairesel veya kutu stili buraya eklenebilir
+  }
+
+  .card-value {
+    font-weight: 600;
+    margin-top: 5px;
+    font-size: 1.1em;
+  }
+
+  .card-label {
+    color: #aaaaaa; // Daha açık gri etiket rengi
+  }
+}
+
+// Mobil Cihazlar İçin Ayarlama
+@media (max-width: 1024px) {
+  .contact-cards-container {
+    grid-template-columns: repeat(2, 1fr); // Tablete 2 sütun
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-cards-container {
+    grid-template-columns: 1fr; // Mobil cihazlara 1 sütun
+  }
+}

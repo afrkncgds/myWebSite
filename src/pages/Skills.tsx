@@ -54,7 +54,10 @@ const education: EducationItem[] = [
 const Skills: React.FC = () => {
     return (
         <MotionWrapper direction="top">
-            <section className="section">
+            <section className="section skills">
+                <div className="title-item">
+                    <h1>Yetenekler</h1>
+                </div>
                 <div className="skills-experience-wrapper">
                     <div className="education-group">
                         <h3 className="skills-title">Education</h3>
